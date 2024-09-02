@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ul class="grid mx-2 gap-6 md:grid-cols-2 ">
+        <ul class="grid  gap-6 md:grid-cols-2 mt-2">
             <li v-for="(nav, i) in  navigationBottom " :key="i">
                 <input type="radio" :id="'hosting' + i" name="hosting" v-model="navIndex" :value="nav.i"
                     class="hidden peer" required />
@@ -8,7 +8,8 @@
                     class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-red-500 peer-checked:border-red-600 peer-checked:text-red-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
                     <div class="block">
                         <div class="w-full text-lg font-semibold text-start">{{ nav.label }}</div>
-                        <div class="w-full">
+                        <hr>
+                        <div class="w-full ">
                             <img :src="nav.src" class="rounded-sm" alt="img not found">
                         </div>
                     </div>
@@ -34,27 +35,25 @@ export default {
             navigationBottom: [
                 {
                     i: 0,
-                    label: 'navigationBottom type 0',
+                    label: 'Navigation Bottom type 0',
                     src: require('@/assets/navigationBottom/0.png')
                 },
                 {
                     i: 1,
-                    label: 'navigationBottom type 1',
+                    label: 'Navigation Bottom type 1',
                     src: require('@/assets/navigationBottom/1.png')
                 },
                 {
                     i: 2,
-                    label: 'navigationBottom type 2',
+                    label: 'Navigation Bottom type 2',
                     src: require('@/assets/navigationBottom/2.png')
                 }
             ],
             navIndex: 0,
-            mdHidden: true
         }
     },
     computed: {
         ...mapGetters(['getNavigationBottom']),
-        ...mapGetters(['getMdHidden']),
     },
     mounted() {
         this.mdHidden = this.getMdHidden
