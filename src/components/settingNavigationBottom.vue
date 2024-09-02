@@ -2,7 +2,8 @@
     <div>
         <ul class="grid mx-2 gap-6 md:grid-cols-2 ">
             <li v-for="(nav, i) in  navigationBottom " :key="i">
-                <input type="radio" :id="'hosting' + i" name="hosting" class="hidden peer" required />
+                <input type="radio" :id="'hosting' + i" name="hosting" v-model="navIndex" :value="nav.i"
+                    @click="setNavigationBottom" class="hidden peer" required />
                 <label :for="'hosting' + i"
                     class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-red-500 peer-checked:border-red-600 peer-checked:text-red-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
                     <div class="block">
@@ -18,13 +19,12 @@
                     </svg>
                 </label>
             </li>
-
         </ul>
-
     </div>
 </template>
 <script>
-import { mapGetters } from 'vuex';
+
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
     name: "settingNavigationBottom",
@@ -54,11 +54,17 @@ export default {
     computed: {
         ...mapGetters(['getNavigationBottom']),
         ...mapGetters(['getMdHidden']),
-
     },
     mounted() {
-        this.navIndex = this.getNavigationBottom
         this.mdHidden = this.getMdHidden
+    },
+    methods: {
+        ...mapActions(['updateNavigationBottom', 'updatemdHidden']),
+        setNavigationBottom() {
+            console.log(this.navIndex);
+            // Call Vuex action to update navigationBottom
+            this.updateNavigationBottom(this.navIndex);
+        }
     }
 }
 </script>
