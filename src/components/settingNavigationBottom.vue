@@ -3,7 +3,7 @@
         <ul class="grid mx-2 gap-6 md:grid-cols-2 ">
             <li v-for="(nav, i) in  navigationBottom " :key="i">
                 <input type="radio" :id="'hosting' + i" name="hosting" v-model="navIndex" :value="nav.i"
-                    @click="setNavigationBottom" class="hidden peer" required />
+                    class="hidden peer" required />
                 <label :for="'hosting' + i"
                     class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-red-500 peer-checked:border-red-600 peer-checked:text-red-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
                     <div class="block">
@@ -33,17 +33,17 @@ export default {
             navigationBottom: [
                 {
                     i: 0,
-                    label: 'navigationBottom 0',
+                    label: 'navigationBottom type 0',
                     src: require('@/assets/navigationBottom/0.png')
                 },
                 {
                     i: 1,
-                    label: 'navigationBottom 1',
+                    label: 'navigationBottom type 1',
                     src: require('@/assets/navigationBottom/1.png')
                 },
                 {
                     i: 2,
-                    label: 'navigationBottom 2',
+                    label: 'navigationBottom type 2',
                     src: require('@/assets/navigationBottom/2.png')
                 }
             ],
@@ -62,9 +62,12 @@ export default {
     methods: {
         ...mapActions(['updateNavigationBottom', 'updatemdHidden']),
         setNavigationBottom() {
-            console.log(this.navIndex);
-            // Call Vuex action to update navigationBottom
             this.updateNavigationBottom(this.navIndex);
+        }
+    },
+    watch: {
+        navIndex() {
+            this.setNavigationBottom();
         }
     }
 }
