@@ -1,8 +1,11 @@
 <template>
     <div>
         <nav
-            class="fixed top-0 z-50 w-full flex justify-start md:justify-between gap-2 md:gap-0 px-2 md:px-20 py-5 items-center bg-white shadow-md">
-            <h1 class="text-xl text-gray-800 font-bold">Gizmo Shop</h1>
+            class="fixed top-0 z-50 w-full flex justify-start md:justify-between gap-2 md:gap-0 px-2 md:px-20 py-1 md:py-5 items-center bg-white shadow-md">
+            <h1 class="hidden md:block text-xl text-gray-800 font-bold">Gizmo Shop</h1>
+            <div class="block md:hidden relative  ">
+                <img src="../assets/gizmoShop.jpg" class=" w-14 h-14" alt="">
+            </div>
             <div class="flex items-center">
                 <div class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 pt-0.5 text-gray-600" fill="none"

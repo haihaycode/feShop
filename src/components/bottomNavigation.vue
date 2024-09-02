@@ -1,6 +1,6 @@
 <template>
 
-    <div class=" sm:block" :class="mdHidden ? 'md:hidden' : ''">
+    <div class="sm:block" :class="mdHidden ? 'md:hidden' : ''">
 
         <!-- nav 1 -->
 
