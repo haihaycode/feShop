@@ -1,6 +1,7 @@
 <template>
   <bottomNavigation :navIndex="getNavigationBottom" :mdHidden="getMdHidden" />
-  <router-view class="mx-2" />
+  <router-view class="mx-2 md:mx-28" />
+  <div style="height: 100px;"></div>
 </template>
 
 
