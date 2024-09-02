@@ -135,8 +135,6 @@
 
         <!-- nav 3 -->
 
-
-
         <div v-if="navIndex === 2" class=" fixed bottom-0 z-50 w-full h-16 p-1 bg-gray-50 ">
             <div class="grid h-full max-w-lg grid-cols-5 mx-auto font-medium">
                 <button type="button"
@@ -209,19 +207,20 @@
 
 </template>
 <script>
+
 export default {
     name: 'navComponent',
     props: {
         navIndex: {
             type: Number,
-            default: 2
+            default: 0
         },
         mdHidden: {
             type: Boolean,
             default: false
         }
 
+    },
 
-    }
 }
 </script>
