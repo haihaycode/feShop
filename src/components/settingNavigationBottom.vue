@@ -57,6 +57,7 @@ export default {
     },
     mounted() {
         this.mdHidden = this.getMdHidden
+        this.navIndex = this.getNavigationBottom
     },
     methods: {
         ...mapActions(['updateNavigationBottom', 'updatemdHidden']),
