@@ -1,5 +1,6 @@
 <template>
     <div>
+        <!-- nav  -->
         <nav
             class="fixed top-0 z-50 w-full flex justify-start md:justify-between gap-2 md:gap-0 px-2 md:px-20 py-1 md:py-5 items-center bg-white shadow-md">
             <h1 class="hidden md:block text-xl text-gray-800 font-bold">Gizmo Shop</h1>
@@ -13,8 +14,8 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
-                    <input class="ml-2 outline-none bg-transparent font-" type="text" name="search" id="search"
-                        placeholder="Search..." />
+                    <input v-model="searchQuery" @input="search" class="ml-2 outline-none bg-transparent font-"
+                        type="text" name="search" id="search" placeholder="Search..." />
                 </div>
                 <ul class="flex items-center space-x-6">
                     <li class="font-semibold text-gray-700 hidden md:block">Home</li>
@@ -49,10 +50,77 @@
                 </ul>
             </div>
         </nav>
+        <!-- end nav  -->
+
+
+        <!-- search engine -->
+        <nav v-if="searchResults.length > 0 && isSearchOpen"
+            class="fixed  md:right-16 right-0 z-50 w-full md:w-80 bg-white shadow-lg p-2 rounded-lg overflow-y-auto max-h-96 custom-scrollbar">
+            <div class="space-y-4">
+                <div class="text-center w-full border-b flex justify-end border-gray-100 ">
+                    <p @click="toggleSearch" class="text-sm text-gray-500 truncate hover:text-red-500"><svg
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </p>
+                </div>
+
+                <!-- item for each -->
+                <div v-for="product in searchResults" :key="product.id"
+                    class="flex items-center h-24 w-full border-b py-1 border-gray-100 ">
+                    <div class="w-1/3 h-full flex items-center justify-center">
+                        <img :src="product.thumbnail" alt="Product Image" class="w-20 h-20 object-cover rounded-lg">
+                    </div>
+                    <div class="w-2/3 h-full pl-4 flex flex-col justify-center">
+                        <h2 class="text-lg font-semibold truncate">{{ product.title }}</h2>
+                        <p class="text-gray-600">$ {{ product.price }}</p>
+                        <p class="text-sm text-gray-500 truncate">{{ product.description }}</p>
+                    </div>
+                </div>
+
+                <div v-if="searchResults.length === 0" class="text-center h-24 w-full border-b  border-gray-100 ">
+                    <p class="text-sm text-gray-500 truncate">không có sản phaảm nào</p>
+                </div>
+
+                <div v-if="searchResults.length > 0" class="text-center h-12 w-full border-b  border-gray-100 ">
+                    <p class="text-sm text-gray-500 truncate hover:text-red-500">Xem tất cả</p>
+                </div>
+            </div>
+        </nav>
+        <!--end search engine -->
     </div>
 </template>
 <script>
+import debounce from 'lodash/debounce';
+import productService from '@/services/productService';
+
 export default {
-    name: "topNavigation"
-}
+    name: "topNavigation",
+    data() {
+        return {
+            searchQuery: '',
+            searchResults: [],
+            isSearchOpen: false,
+        };
+    },
+    methods: {
+        toggleSearch() {
+            this.isSearchOpen = !this.isSearchOpen;
+        },
+        search: debounce(async function () {
+            this.isSearchOpen = true;
+            if (this.searchQuery.length > 2) {
+                try {
+                    const response = await productService.searchProducts(this.searchQuery);
+                    this.searchResults = response.products;
+                } catch (error) {
+                    console.error('Error fetching search results:', error);
+                }
+            }
+        }, 300),
+    },
+
+};
+
 </script>
