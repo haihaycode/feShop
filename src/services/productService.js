@@ -4,7 +4,7 @@ const API_URL = process.env.VUE_APP_API_URL + 'products';
 
 
 const productService = {
-    // Lấy tất cả sản phẩm
+
     getAllProducts() {
         return axios.get(API_URL)
             .then(response => response.data)
@@ -14,7 +14,7 @@ const productService = {
             });
     },
 
-    // Lấy chi tiết sản phẩm theo ID
+
     getProductById(productId) {
         return axios.get(`${API_URL}/${productId}`)
             .then(response => response.data)
