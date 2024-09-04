@@ -8,7 +8,7 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 0, 0, 0.388); /* Màu của thanh cuộn */
+  background-color: #d70018; /* Màu của thanh cuộn */
   border-radius: 10px; /* Góc bo tròn của thanh cuộn */
 }
 
