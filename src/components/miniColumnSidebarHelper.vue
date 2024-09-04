@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="hidden md:block fixed bottom-20 right-2 rounded-md z-50 h-70  ">
+        <div class="hidden md:block fixed bottom-20 right-2 rounded-md z-40 h-70  ">
             <!-- container -->
 
             <aside class="flex flex-col items-center  text-gray-700  h-full">

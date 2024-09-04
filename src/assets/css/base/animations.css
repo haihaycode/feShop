@@ -8,7 +8,36 @@
     opacity: 1;
   }
 }
-
 .animation-slideInFrom {
   animation: slideInFromTop 0.5s ease-out;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.animation-slideInFromRight {
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+/* tiếng việt  */
+@keyframes trượtVàoTừPhải {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animation-trượtVàoTừPhải {
+  animation: trượtVàoTừPhải 0.5s ease-out;
 }

@@ -17,7 +17,7 @@
 
             <!-- Item for each search result -->
             <div v-for="product in searchResults" :key="product.id"
-                class="flex items-center h-24 w-full border-b py-1 border-gray-100">
+                class="flex items-center w-full border-b py-1 border-gray-100">
                 <div class="w-1/3 h-full flex items-center justify-center">
                     <img :src="product.thumbnail" alt="Product Image" class="w-20 h-20 object-cover rounded-lg">
                 </div>

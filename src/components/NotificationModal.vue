@@ -3,7 +3,7 @@
         class="fixed md:right-16 right-0 h-96 z-50 w-full md:w-80 bg-white shadow-lg p-2 rounded-lg overflow-y-auto max-h-96 custom-scrollbar animation-slideInFrom">
         <div class="space-y-4">
             <div class="text-center w-full flex justify-between space-x-2 ">
-                <p class="flex items-center font-bold ">
+                <p class="flex items-center text-sm font-bold ">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-5 text-red-500">
                         <path stroke-linecap="round" stroke-linejoin="round"
