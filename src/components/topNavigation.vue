@@ -70,7 +70,7 @@
 
         <!-- search engine -->
         <SearchModal :isSearchOpen="isSearchOpen" :searchResults="searchResults" :toggleSearch="toggleSearch"
-            :loading="loading" />
+            :q="searchQuery" :loading="loading" />
         <!--end search engine -->
 
         <!-- Account modal -->

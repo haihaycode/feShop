@@ -2,13 +2,17 @@
     <nav v-if="isSearchOpen"
         class="fixed md:right-16 right-0 z-50 w-full md:w-80 bg-white shadow-lg p-2 rounded-lg overflow-y-auto max-h-96 custom-scrollbar">
         <div class="space-y-4">
-            <div class="text-center w-full border-b flex justify-end border-gray-100">
-                <p @click="toggleSearch" class="text-sm text-gray-500 truncate hover:text-red-500">
+            <div class="text-center w-full border-b flex justify-between border-gray-100">
+                <p class="text-sm truncate"> '<span class="text-red-600">{{ q }}</span>' tìm thấy {{
+                    searchResults.length }} kết
+                    quả
+                </p>
+                <div @click="toggleSearch" class=" text-sm text-gray-500 truncate hover:text-red-500">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
-                </p>
+                </div>
             </div>
 
             <!-- Item for each search result -->
@@ -45,6 +49,10 @@
 export default {
     name: 'SearchModal',
     props: {
+        q: {
+            type: String,
+            required: true,
+        },
         isSearchOpen: {
             type: Boolean,
             required: true,

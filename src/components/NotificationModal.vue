@@ -3,7 +3,7 @@
         class="fixed md:right-16 right-0 h-96 z-50 w-full md:w-80 bg-white shadow-lg p-2 rounded-lg overflow-y-auto max-h-96 custom-scrollbar animation-slideInFrom">
         <div class="space-y-4">
             <div class="text-center w-full flex justify-between space-x-2 ">
-                <p class="flex items-center ">
+                <p class="flex items-center font-bold ">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="size-5 text-red-500">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -22,9 +22,8 @@
             <div v-for="(notification, index) in notifications" :key="index"
                 class=" w-full border-b py-1 border-gray-100">
                 <div class=" h-full flex flex-col justify-center">
-                    <p
-                        class="flex items-center text-sm font-light truncate cursor-pointer hover:text-red-500 hover:bg-gray-100">
-                        {{ notification.message }} </p>
+                    <p class="flex items-center text-sm  truncate cursor-pointer hover:text-red-500 hover:bg-gray-100">
+                        {{ notification.message }}</p>
                 </div>
             </div>
 
