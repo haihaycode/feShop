@@ -16,3 +16,17 @@
   background-color: #f1f1f1; /* Màu nền của track thanh cuộn */
   border-radius: 10px;
 }
+
+.custom-scrollbarWhite::-webkit-scrollbar {
+  width: 6px; /* Độ rộng của thanh cuộn */
+}
+
+.custom-scrollbarWhite::-webkit-scrollbar-thumb {
+  background-color: #d7001900; /* Màu của thanh cuộn */
+  border-radius: 10px; /* Góc bo tròn của thanh cuộn */
+}
+
+.custom-scrollbarWhite::-webkit-scrollbar-track {
+  background-color: #f1f1f100; /* Màu nền của track thanh cuộn */
+  border-radius: 10px;
+}
