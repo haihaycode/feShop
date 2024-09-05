@@ -1,15 +1,26 @@
 <template>
   <div class="text-center">
-    <img alt="Vue logo" class="mx-auto" src="../assets/gizmoShop.jpg">
-    <HelloWorld msg="Hỗ trợ cho dự án tốt nghiệp GizmoShop" />
+
+    <NewsComponent></NewsComponent>
+    <CategoryNavigation></CategoryNavigation>
+    <!-- <settingNavigationBottom></settingNavigationBottom>
+    <settingHiddenNav></settingHiddenNav> -->
+
+
   </div>
 </template>
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
+// import settingNavigationBottom from '@/components/settingNavigationBottom.vue';
+// import settingHiddenNav from '@/components/settingHiddenNav.vue';
+import CategoryNavigation from '@/components/CategoryNavigation.vue';
+import NewsComponent from '@/components/NewsComponent.vue';
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
-  }
+    // settingNavigationBottom,
+    // settingHiddenNav,
+    CategoryNavigation,
+    NewsComponent
+  },
 }
 </script>

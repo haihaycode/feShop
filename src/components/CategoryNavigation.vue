@@ -1,15 +1,36 @@
 <template>
     <div>
         <div
-            class="mt-2 flex overflow-x-auto space-x-4 p-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer custom-scrollbarWhite">
-            <div class="flex-none w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 text-center" v-for="a in array" :key="a.id">
-                <img class="w-28 mx-auto transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0"
-                    :src="a.image" alt="image description">
-                <p>{{ a.name }}</p>
+            class="relative mt-2 flex overflow-x-auto space-x-4  text-gray-500 bg-base  rounded-lg py-2 px-4 custom-scrollbarWhite">
+            <!-- Nút điều hướng bên trái -->
+            <div
+                class="absolute top-1/2 transform -translate-y-1/2 left-1 bg-white z-10 p-2 rounded-full shadow-md cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                </svg>
+            </div>
+
+            <!-- Nội dung cuộn -->
+            <div class="flex space-x-4 overflow-x-auto custom-scrollbarWhite w-full ">
+                <div class="flex-none w-1/2 sm:w-1/3 md:w-1/5 lg:w-1/6 text-center border rounded-sm bg-white transform transition-transform duration-300 hover:scale-90"
+                    v-for="a in array" :key="a.id">
+                    <!-- <img class="w-28 mx-auto transition-all duration-300 rounded-lg cursor-pointer filter grayscale hover:grayscale-0"
+                        :src="a.image" alt="image description"> -->
+                    <img class="w-28 mx-auto rounded-lg cursor-pointer " :src="a.image" alt="image description">
+                    <p class="text-sm py-1">{{ a.name }}</p>
+                </div>
+            </div>
+
+            <!-- Nút điều hướng bên phải -->
+            <div
+                class="absolute top-1/2 transform -translate-y-1/2 right-1 bg-white z-10 p-2 rounded-full shadow-md cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+                </svg>
             </div>
         </div>
-
-
 
     </div>
 </template>
