@@ -24,6 +24,10 @@
                         class="font-semibold text-white hidden md:block  hover:bg-gray-100 hover:bg-opacity-35 px-1 py-2 rounded-sm  ">
                         Trang chủ
                     </li>
+                    <li
+                        class="font-semibold text-white hidden md:block  hover:bg-gray-100 hover:bg-opacity-35 px-1 py-2 rounded-sm  ">
+                        Tin công nghệ
+                    </li>
                     <!-- trang chủ -->
                     <!-- đối tác  -->
                     <li

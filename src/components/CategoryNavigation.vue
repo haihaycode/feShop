@@ -1,7 +1,7 @@
 <template>
     <div>
         <div
-            class="relative mt-2 flex overflow-x-auto space-x-4  text-gray-500 bg-base  rounded-lg py-2 px-4 custom-scrollbarWhite">
+            class="relative mt-0 md:mt-2 flex overflow-x-auto space-x-4  text-gray-500 bg-base  rounded-sm py-2 px-4 custom-scrollbarWhite">
             <!-- Nút điều hướng bên trái -->
             <div
                 class="absolute top-1/2 transform -translate-y-1/2 left-1 bg-white z-10 p-2 rounded-full shadow-md cursor-pointer">

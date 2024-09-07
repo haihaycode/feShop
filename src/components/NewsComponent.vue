@@ -17,7 +17,7 @@
                     :style="{ transform: `translateX(-${newsIndex * 100}%)` }">
                     <div v-for="n in news" :key="n.id" class="w-full flex-shrink-0">
                         <img :src="n.image" alt="Product Image"
-                            class="w-full h-[120px] md:h-[430px] object-cover rounded-sm">
+                            class="w-full h-[120px] md:h-[430px] object-fill md:object-cover rounded-sm">
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
         <div class="col-span-1 bg-gray-100 bg-opacity-30 relative hidden sm:block">
             <div class="bg-base w-1/2 text-white font-normal">TIN CÔNG NGHỆ</div>
 
-            <div v-for="n in news.slice(0, 4)" :key="n.id" class="flex gap-4 w-full border-b py-2 p-1 border-gray-100">
+            <div v-for="n in news.slice(0, 5)" :key="n.id" class="flex gap-4 w-full border-b py-2 p-1 border-gray-100">
                 <!-- Hình bên trái -->
                 <div class="w-1/4">
                     <img :src="n.image" alt="Product Image" class="w-full h-20 object-cover rounded-sm">
