@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-2 grid md:grid-cols-3 grid-cols-1 gap-2">
+    <div class="mt-0 md:mt-2 grid md:grid-cols-3 grid-cols-1 gap-2">
         <!-- Phần carousel chiếm 2 cột -->
         <div class="md:col-span-2 col-span-1 overflow-hidden relative">
             <div class="relative w-full">

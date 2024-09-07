@@ -3,7 +3,7 @@
   <bottomNavigation :navIndex="getNavigationBottom" :mdHidden="getMdHidden" />
   <miniColumnSidebar></miniColumnSidebar>
   <miniColumnSidebarHelper></miniColumnSidebarHelper>
-  <router-view class="mx-2 md:mx-28 mt-20" />
+  <router-view class="mx-0 mt-16 md:mx-28 md:mt-20" />
   <div style="height: 1000px;"></div>
 </template>
 
