@@ -5,25 +5,49 @@
             <div class="relative w-full">
                 <!-- Nút chuyển carousel lùi -->
                 <div @click="changeNewIndex(newsIndex - 1)"
-                    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-red-700 bg-opacity-45 hover:bg-base hover:bg-opacity-100 text-white p-2 cursor-pointer z-10">
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-0 md:bg-opacity-45 hover:bg-base hover:bg-opacity-100 text-white p-2 cursor-pointer z-10">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5l-6-6 6-6" />
                     </svg>
                 </div>
 
+                <marquee behavior="" direction="" class="bg-gray-100 bg-opacity-30 text mt-0 ">
+                    ☞ [ <code>Tin mới</code> ]
+                    {{ news[newsIndex].title
+                    }}
+                    <span class="hashtags">
+                        <span class="text-red-500">#GizmoShop</span>
+                        <span class="text-blue-500">#CôngNghệ</span>
+                        <span class="text-green-500">#Gadget</span>
+                        <span class="text-yellow-500">#Sale</span>
+                        <span class="text-purple-500">#GiảmGiá</span>
+                        <span class="text-pink-500">#MớiNhất</span>
+                        <span class="text-indigo-500">#TechLover</span>
+                        <span class="text-teal-500">#Smartphone</span>
+                        <span class="text-orange-500">#Laptop</span>
+                        <span class="text-gray-500">#ĐồChơiCôngNghệ</span>
+                    </span>
+
+                    Gizmo Shop: ⚡ Công nghệ đỉnh cao, trải nghiệm tuyệt vời! ⚡ Gizmo Shop: Gadget mới nhất, giá cả siêu
+                    hấp dẫn! Gizmo Shop: Khám phá vũ trụ công nghệ cùng Gizmo Shop!
+                </marquee>
                 <!-- Container chứa các hình ảnh carousel -->
                 <div class="carousel-container w-full flex transition-transform duration-500 ease-in-out"
                     :style="{ transform: `translateX(-${newsIndex * 100}%)` }">
-                    <div v-for="n in news" :key="n.id" class="w-full flex-shrink-0">
+                    <div v-for="n in news" :key="n.id" class="relative w-full flex-shrink-0">
                         <img :src="n.image" alt="Product Image"
-                            class="w-full h-[120px] md:h-[430px] object-fill md:object-cover rounded-sm">
+                            class="w-full h-[120px] md:h-[430px] object-fill md:object-cover rounded-none">
+                        <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center p-2">
+                            <h2 class="ntitle">{{ n.title }}</h2>
+                        </div>
                     </div>
                 </div>
 
+
                 <!-- Nút chuyển carousel tới -->
                 <div @click="changeNewIndex(newsIndex + 1)"
-                    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-red-700 bg-opacity-45 hover:bg-base hover:bg-opacity-100 text-white p-2 cursor-pointer z-10">
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700  bg-opacity-0 md:bg-opacity-45  hover:bg-base hover:bg-opacity-100 text-white p-2 cursor-pointer z-10">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l6 6-6 6" />
@@ -112,6 +136,9 @@ export default {
             newsIndex: 0,
         };
     },
+    mounted() {
+        this.startAutoChangeNewsIndex();
+    },
     methods: {
         changeNewIndex(index) {
             if (index < 0) {
@@ -127,6 +154,11 @@ export default {
             if (index !== -1) {
                 this.changeNewIndex(index);
             }
+        },
+        startAutoChangeNewsIndex() {
+            setInterval(() => {
+                this.changeNewIndex(this.newsIndex + 1);
+            }, 2000); // 2000 milliseconds = 2 seconds
         }
     }
 };

@@ -4,8 +4,9 @@
         <nav
             class="fixed top-0 z-50 w-full flex justify-start md:justify-between gap-2 md:gap-0 px-2 md:px-20 py-1 md:py-1 items-center bg-base shadow-md">
             <h1 class="hidden md:block text-2xl text-white font-bold">Gizmo Shop</h1>
-            <div class="block md:hidden relative">
-                <img src="../assets/logoV1/custom-logo.png" class="w-14 h-14" alt="">
+            <div class="block md:hidden relative w-14 h-14 flex justify-center items-center">
+                <!-- <img src="../assets/logoV1/v1.png" class="w-14 h-14 object-cover " alt=""> -->
+                <h1 class="text-center font-extrabold text-gray-100 text-4xl">G</h1>
             </div>
             <div class="flex items-center">
                 <div class="flex items-center">
@@ -15,7 +16,7 @@
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                     <input v-model="searchQuery" @input="search" @click="toggleSearch"
-                        class="w-full text-white ml-2 outline-none bg-transparent rounded-sm focus:bg-gray-200 focus:bg-opacity-30 placeholder:text-white"
+                        class="w-full text-white ml-2 text-[16px] md:text-[18px] outline-none bg-transparent rounded-sm placeholder:text-white"
                         type="text" name="search" id="search" placeholder="Tìm kiếm..." />
                 </div>
                 <ul class="flex items-center space-x-6">
@@ -89,6 +90,11 @@
                 </ul>
             </div>
         </nav>
+
+
+
+
+
         <!-- end nav top  -->
 
         <!-- search engine -->
