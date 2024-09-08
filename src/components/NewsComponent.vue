@@ -37,7 +37,7 @@
                     :style="{ transform: `translateX(-${newsIndex * 100}%)` }">
                     <div v-for="n in news" :key="n.id" class="relative w-full flex-shrink-0">
                         <img :src="n.image" alt="Product Image"
-                            class="w-full h-[120px] md:h-[430px] object-fill md:object-cover rounded-none">
+                            class="w-full h-[150px] md:h-[430px] object-fill md:object-cover rounded-none">
                         <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center p-2">
                             <h2 class="ntitle">{{ n.title }}</h2>
                         </div>

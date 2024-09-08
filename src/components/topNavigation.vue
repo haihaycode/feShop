@@ -6,7 +6,7 @@
             <h1 class="hidden md:block text-2xl text-white font-bold">Gizmo Shop</h1>
             <div class="block md:hidden relative w-14 h-14 flex justify-center items-center">
                 <!-- <img src="../assets/logoV1/v1.png" class="w-14 h-14 object-cover " alt=""> -->
-                <h1 class="text-center font-extrabold text-gray-100 text-4xl">G</h1>
+                <h1 class="text-center font-extrabold text-gray-100 text-5xl">G</h1>
             </div>
             <div class="flex items-center">
                 <div class="flex items-center">

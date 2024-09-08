@@ -3,7 +3,7 @@
         class="fixed md:right-16 right-0 z-50 w-full md:w-80 bg-white shadow-lg p-2 rounded-none md:rounded-lg overflow-y-auto max-h-96 custom-scrollbar">
         <div class="space-y-4">
             <div class="text-center w-full border-b flex justify-between border-gray-100">
-                <p class="text-sm truncate"> <span class="text-red-600">{{ q }}</span> tìm thấy {{
+                <p class="text-sm truncate"> <span class="text-red-600">{{ q }}</span> Tìm thấy {{
                     searchResults.length }} kết
                     quả
                 </p>
