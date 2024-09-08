@@ -12,7 +12,7 @@
                     </svg>
                 </div>
 
-                <marquee behavior="" direction="" class="bg-gray-100 bg-opacity-30 text mt-0 ">
+                <marquee behavior="" direction="" class="bg-gray-100 bg-opacity-30 text mt-1 ">
                     ☞ [ <code>Tin mới</code> ]
                     {{ news[newsIndex].title
                     }}
@@ -59,7 +59,7 @@
             <div class="hidden md:block mt-2 overflow-x-auto custom-scrollbarWhite">
                 <div class="grid grid-cols-5 gap-4 min-w-14">
                     <div v-for="n in news" :key="n.id"
-                        :class="news[newsIndex].id === n.id ? 'border-b border-red-500' : ''"
+                        :class="news[newsIndex].id === n.id ? 'border-b text-red-500' : ''"
                         class="col-span-1 border p-1 cursor-pointer">
                         <div @click="changeNewIndexById(n.id)">
                             <p class="text-sm1 w-full items-center justify-between flex">
@@ -71,6 +71,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
         <!-- Phần tin công nghệ chiếm 1 cột, ẩn trên các thiết bị nhỏ hơn sm -->
@@ -89,7 +90,7 @@
                 </div>
             </div>
             <div class="absolute bottom-0 w-full">
-                <p class="text-center">Xem thêm tin tức ...</p>
+                <p class="text-center cursor-pointer">Xem thêm tin tức ...</p>
             </div>
         </div>
     </div>
