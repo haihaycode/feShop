@@ -12,7 +12,8 @@
                     </svg>
                 </div>
 
-                <marquee behavior="" direction="" class="bg-gray-100 bg-opacity-30 text mt-1 hidden md:block lg:block">
+                <marquee behavior="" direction=""
+                    class="bg-gray-100 bg-opacity-30 text mt-1 hidden md:hidden lg:hidden">
                     ☞ [ <code>Tin mới</code> ]
                     {{ news[newsIndex].title
                     }}
@@ -60,8 +61,8 @@
             <div class="hidden md:hidden lg:block mt-2 overflow-x-auto custom-scrollbarWhite">
                 <div class="grid grid-cols-5 gap-4 min-w-14">
                     <div v-for="n in news" :key="n.id"
-                        :class="news[newsIndex].id === n.id ? 'border-b text-red-500' : ''"
-                        class="col-span-1 border p-1 cursor-pointer">
+                        :class="news[newsIndex].id === n.id ? ' bg-gray-100 bg-opacity-30 text-red-500' : ''"
+                        class="col-span-1  p-1 cursor-pointer">
                         <div @click="changeNewIndexById(n.id)">
                             <p class="text-sm1 w-full items-center justify-between flex">
                                 <img src="../assets/components/new_label.svg" class="w-10" alt="">
