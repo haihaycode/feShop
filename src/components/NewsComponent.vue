@@ -1,18 +1,18 @@
 <template>
-    <div class="mt-0 md:mt-2 grid md:grid-cols-3 grid-cols-1 gap-2">
+    <div class="mt-0 md:mt-2 grid lg:grid-cols-3 md:grid-cols-1 gap-2">
         <!-- Phần carousel chiếm 2 cột -->
-        <div class="md:col-span-2 col-span-1 overflow-hidden ">
+        <div class="lg:col-span-2 md:col-span-1 overflow-hidden ">
             <div class="relative w-full">
                 <!-- Nút chuyển carousel lùi -->
                 <div @click="changeNewIndex(newsIndex - 1)"
-                    class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700 bg-opacity-0 md:bg-opacity-45 hover:bg-base hover:bg-opacity-100 text-white p-2 cursor-pointer z-10">
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2    text-white p-2 cursor-pointer z-10">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5l-6-6 6-6" />
                     </svg>
                 </div>
 
-                <marquee behavior="" direction="" class="bg-gray-100 bg-opacity-30 text mt-1 ">
+                <marquee behavior="" direction="" class="bg-gray-100 bg-opacity-30 text mt-1 hidden md:block lg:block">
                     ☞ [ <code>Tin mới</code> ]
                     {{ news[newsIndex].title
                     }}
@@ -48,7 +48,7 @@
 
                 <!-- Nút chuyển carousel tới -->
                 <div @click="changeNewIndex(newsIndex + 1)"
-                    class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700  bg-opacity-0 md:bg-opacity-45  hover:bg-base hover:bg-opacity-100 text-white p-2 cursor-pointer z-10">
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 text-white p-2 cursor-pointer z-10">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l6 6-6 6" />
@@ -57,7 +57,7 @@
             </div>
 
             <!-- Phần tiêu đề tin tức -->
-            <div class="hidden md:block mt-2 overflow-x-auto custom-scrollbarWhite">
+            <div class="hidden md:hidden lg:block mt-2 overflow-x-auto custom-scrollbarWhite">
                 <div class="grid grid-cols-5 gap-4 min-w-14">
                     <div v-for="n in news" :key="n.id"
                         :class="news[newsIndex].id === n.id ? 'border-b text-red-500' : ''"
@@ -76,7 +76,7 @@
         </div>
 
         <!-- Phần tin công nghệ chiếm 1 cột, ẩn trên các thiết bị nhỏ hơn sm -->
-        <div class="col-span-1 bg-gray-100 bg-opacity-30 relative hidden md:block">
+        <div class="col-span-1 bg-gray-100 bg-opacity-30 relative hidden md:block ">
             <div class="bg-base w-1/2 text-white font-normal">TIN CÔNG NGHỆ</div>
 
             <div v-for="n in news.slice(0, 5)" :key="n.id" class="flex gap-4 w-full border-b py-2 p-1 border-gray-100">
@@ -90,7 +90,7 @@
                     <p class="text-gray-600 text-start">{{ n.date }}</p>
                 </div>
             </div>
-            <div class="absolute bottom-0 w-full">
+            <div class="absolute bottom-0 w-full bg-gray-100 ">
                 <p class="text-center cursor-pointer">Xem thêm tin tức ...</p>
             </div>
         </div>

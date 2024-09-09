@@ -2,7 +2,9 @@
   <div class="text-center">
 
     <NewsComponent></NewsComponent>
-    <CategoryNavigation></CategoryNavigation>
+    <BannerSale></BannerSale>
+    <BannerBrands></BannerBrands>
+    <!-- <CategoryNavigation></CategoryNavigation> -->
     <!-- <settingNavigationBottom></settingNavigationBottom>
     <settingHiddenNav></settingHiddenNav> -->
 
@@ -12,14 +14,18 @@
 <script>
 // import settingNavigationBottom from '@/components/settingNavigationBottom.vue';
 // import settingHiddenNav from '@/components/settingHiddenNav.vue';
-import CategoryNavigation from '@/components/CategoryNavigation.vue';
+// import CategoryNavigation from '@/components/CategoryNavigation.vue';
 import NewsComponent from '@/components/NewsComponent.vue';
+import BannerBrands from '@/components/BannerBrands.vue';
+import BannerSale from '@/components/BannerSale.vue';
 export default {
   name: 'HomeView',
   components: {
     // settingNavigationBottom,
     // settingHiddenNav,
-    CategoryNavigation,
+    // CategoryNavigation,
+    BannerBrands,
+    BannerSale,
     NewsComponent
   },
 }
