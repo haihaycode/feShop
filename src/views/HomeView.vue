@@ -38,10 +38,11 @@ export default {
     BannerSale,
 
     NewsComponent,
-    BannerCategories
+    BannerCategories,
 
     FlashSalse,
-    NewsComponent
+    //
+
 
   },
 }
