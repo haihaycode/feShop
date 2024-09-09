@@ -12,5 +12,6 @@ export default createStore({
   },
   modules: {
     navigationBottom,
+
   }
 })

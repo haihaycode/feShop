@@ -1,7 +1,7 @@
 <template>
     <div class="mt-0 md:mt-2 grid md:grid-cols-3 grid-cols-1 gap-2">
         <!-- Phần carousel chiếm 2 cột -->
-        <div class="md:col-span-2 col-span-1 overflow-hidden relative">
+        <div class="md:col-span-2 col-span-1 overflow-hidden ">
             <div class="relative w-full">
                 <!-- Nút chuyển carousel lùi -->
                 <div @click="changeNewIndex(newsIndex - 1)"
@@ -32,6 +32,7 @@
                     Gizmo Shop: ⚡ Công nghệ đỉnh cao, trải nghiệm tuyệt vời! ⚡ Gizmo Shop: Gadget mới nhất, giá cả siêu
                     hấp dẫn! Gizmo Shop: Khám phá vũ trụ công nghệ cùng Gizmo Shop!
                 </marquee>
+
                 <!-- Container chứa các hình ảnh carousel -->
                 <div class="carousel-container w-full flex transition-transform duration-500 ease-in-out"
                     :style="{ transform: `translateX(-${newsIndex * 100}%)` }">
@@ -75,7 +76,7 @@
         </div>
 
         <!-- Phần tin công nghệ chiếm 1 cột, ẩn trên các thiết bị nhỏ hơn sm -->
-        <div class="col-span-1 bg-gray-100 bg-opacity-30 relative hidden sm:block">
+        <div class="col-span-1 bg-gray-100 bg-opacity-30 relative hidden md:block">
             <div class="bg-base w-1/2 text-white font-normal">TIN CÔNG NGHỆ</div>
 
             <div v-for="n in news.slice(0, 5)" :key="n.id" class="flex gap-4 w-full border-b py-2 p-1 border-gray-100">
@@ -93,6 +94,7 @@
                 <p class="text-center cursor-pointer">Xem thêm tin tức ...</p>
             </div>
         </div>
+
     </div>
 
 </template>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="isVisible" @click="toggleVisible"
-            class="bg-gray-300 bg-opacity-25 w-screen h-screen top-14 fixed z-50">
+            class="bg-gray-100 bg-opacity-25 w-screen h-screen top-14 fixed z-50">
         </div>
         <nav v-if="isVisible"
             class="fixed md:right-1 md:top-14 right-0 z-50 w-full md:w-96 bg-white shadow-lg p-2 rounded-sm overflow-y-auto h-full custom-scrollbar animation-slideInFromRight ">

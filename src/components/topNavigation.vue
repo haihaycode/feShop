@@ -1,13 +1,20 @@
 <template>
     <div>
         <!-- nav top  -->
+
+
+
+
         <nav
-            class="fixed top-0 z-50 w-full flex justify-start md:justify-between gap-2 md:gap-0 px-2 md:px-20 py-1 md:py-1 items-center bg-base shadow-md">
+            class="fixed top-0 z-50 w-full flex justify-start md:justify-between gap-2 md:gap-0 px-2 md:px-20 py-1  md:py-1 items-center bg-base shadow-md">
+
+
             <h1 class="hidden md:block text-2xl text-white font-bold">Gizmo Shop</h1>
+
             <div class="block md:hidden relative w-14 h-14 flex justify-center items-center">
-                <!-- <img src="../assets/logoV1/v1.png" class="w-14 h-14 object-cover " alt=""> -->
                 <h1 class="text-center font-extrabold text-gray-100 text-5xl">G</h1>
             </div>
+
             <div class="flex items-center">
                 <div class="flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 pt-0.5 text-white" fill="none"
@@ -27,7 +34,7 @@
                     </li>
                     <li
                         class="font-semibold text-white hidden md:block  hover:bg-gray-100 hover:bg-opacity-35 px-1 py-2 rounded-sm  ">
-                        Tin công nghệ
+                        Tin tức
                     </li>
                     <!-- trang chủ -->
                     <!-- đối tác  -->
@@ -101,6 +108,7 @@
         <SearchModal :isSearchOpen="isSearchOpen" :searchResults="searchResults" :toggleSearch="toggleSearch"
             :q="searchQuery" :loading="loading" />
         <!--end search engine -->
+
         <!-- Account modal -->
         <AccountModal :isAccountOpen="isAccountOpen" :toggleAccount="toggleAccount"></AccountModal>
         <!--end Account modal -->
@@ -153,7 +161,7 @@ export default {
         },
         search: debounce(async function () {
             this.isSearchOpen = true;
-            this.loading = false;
+            this.loading = true;
             if (this.searchQuery.length > 2) {
                 try {
                     const response = await productService.searchProducts(this.searchQuery);
