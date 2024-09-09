@@ -4,6 +4,7 @@
     <NewsComponent></NewsComponent>
     <BannerSale></BannerSale>
     <BannerBrands></BannerBrands>
+    <BannerCategories></BannerCategories>
     <!-- <CategoryNavigation></CategoryNavigation> -->
     <!-- <settingNavigationBottom></settingNavigationBottom>
     <settingHiddenNav></settingHiddenNav> -->
@@ -18,6 +19,7 @@
 import NewsComponent from '@/components/NewsComponent.vue';
 import BannerBrands from '@/components/BannerBrands.vue';
 import BannerSale from '@/components/BannerSale.vue';
+import BannerCategories from '@/components/BannerCategories.vue';
 export default {
   name: 'HomeView',
   components: {
@@ -26,7 +28,8 @@ export default {
     // CategoryNavigation,
     BannerBrands,
     BannerSale,
-    NewsComponent
+    NewsComponent,
+    BannerCategories
   },
 }
 </script>
