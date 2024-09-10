@@ -4,9 +4,7 @@
     <NewsComponent></NewsComponent>
     <BannerSale></BannerSale>
     <BannerBrands></BannerBrands>
-
     <BannerCategories></BannerCategories>
-
     <FlashSalse></FlashSalse>
 
     <!-- <CategoryNavigation></CategoryNavigation> -->

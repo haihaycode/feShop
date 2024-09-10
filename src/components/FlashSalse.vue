@@ -9,3 +9,5 @@ export default {
     name: "FlashSale"
 }
 </script>
+
+<style></style>
