@@ -1,4 +1,5 @@
 <template>
+  <voucher></voucher>
     <div class="bg-white grid md:grid-cols-3 grid-cols-1">
 
       <div class="col-span-1  md:block lg:block  overflow-x-hidden">
@@ -15,7 +16,7 @@
       <div class="col-span-2 relative">
         <div class="bg-white p-4">
           <!-- Nút Previous -->
-          <button @click="scrollLeft" class=" md:block lg:block absolute top-1/2 left-[-10px] transform -translate-y-1/2 bg-white shadow p-2 rounded-full">
+          <button @click="scrollLeft" class=" md:block lg:block absolute top-1/2 left-0 md:left-[-10px] transform -translate-y-1/2 bg-white shadow p-2 rounded-full">
             &lt; 
           </button>
           <div ref="scrollContainer" class="custom-scrollbarWhite overflow-x-auto hide-scrollbar">
@@ -27,7 +28,7 @@
           </div>
   
           <!-- Nút Next -->
-          <button @click="scrollRight" class=" md:block lg:block absolute top-1/2 right-[-10px] transform -translate-y-1/2 bg-white shadow p-2 rounded-full">
+          <button @click="scrollRight" class=" md:block lg:block absolute top-1/2 right-0 md:right-[-10px] transform -translate-y-1/2 bg-white shadow p-2 rounded-full">
              &gt;
           </button>
         </div>
@@ -36,8 +37,13 @@
   </template>
   
   <script>
+  import Voucher from '@/components/Voucher.vue';
   export default {
+  components: { Voucher },
     name: 'BannerCategories',
+    component:  {
+      Voucher,
+    },
     data() {
       return {
         array: Array.from({ length: 30 }, (_, index) => ({

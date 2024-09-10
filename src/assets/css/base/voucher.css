@@ -1,0 +1,35 @@
+.voucher {
+    width: 300px;
+    height: 150px;
+    background-color: #ffeb3b;
+    border-radius: 10px;
+    position: relative;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.voucher::before, .voucher::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.voucher::before {
+    top: 0;
+    left: -10px;
+}
+
+.voucher::after {
+    bottom: 0;
+    right: -10px;
+}
+
+.voucher-content {
+    padding: 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
