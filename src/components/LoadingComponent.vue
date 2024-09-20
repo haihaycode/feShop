@@ -1,12 +1,12 @@
 <template>
     <div v-if="loading" class="z-30 bg-opacity-60 fixed inset-0 flex justify-center items-center bg-gray-200 m-0">
         <div class="flex flex-col justify-center items-center">
-            <!-- Hình ảnh -->
+            <!-- Hình ảnh với hiệu ứng làm mờ xung quanh -->
             <img :src="image" alt="Logo"
-                class="mb-4 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-60 lg:h-60 object-cover">
-            <!-- Biểu tượng loading -->
-            <div
-                class="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-12 w-12 sm:h-16 sm:w-16 md:h-20 md:w-20 lg:h-24 lg:w-24 mb-4">
+                class="blur-img mb-4 w-[300px] h-[300px] sm:w-40 sm:h-40 md:w-40 md:h-40 lg:w-60 lg:h-60 object-cover">
+            <!-- Chữ "Đang tải..." với 3 dấu chấm -->
+            <div class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">
+                Đang tải<span class="dot-anim">...</span>
             </div>
         </div>
     </div>
@@ -22,27 +22,57 @@ export default {
         },
         image: {
             type: String,
-            default: require('@/assets/logoV1/v1.png')
+            default: require('@/assets/logoV1/meme.gif')
         }
     }
 }
 </script>
 
 <style scoped>
-.loader {
-    border-top-color: #d70018;
-    /* Màu của viền trên */
-    animation: spin 1s infinite linear;
-    /* Hiệu ứng xoay liên tục */
+.blur-img {
+    position: relative;
+    z-index: 1;
+
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    /* Bóng đổ mờ */
 }
 
-@keyframes spin {
+.blur-img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: blur(10px);
+    /* Sử dụng cùng hình ảnh */
+    background-size: cover;
+    border-radius: 50%;
+    /* Giữ ảnh trong hình tròn */
+}
+
+.dot-anim::after {
+    content: '';
+    display: inline-block;
+    animation: dot-anim 1s steps(3, end) infinite;
+}
+
+@keyframes dot-anim {
     0% {
-        transform: rotate(0deg);
+        content: '';
+    }
+
+    33% {
+        content: '.';
+    }
+
+    66% {
+        content: '..';
     }
 
     100% {
-        transform: rotate(360deg);
+        content: '...';
     }
 }
 </style>
