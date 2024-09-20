@@ -3,10 +3,10 @@
         <div class="flex flex-col justify-center items-center">
             <!-- Hình ảnh với hiệu ứng làm mờ xung quanh -->
             <img :src="image" alt="Logo"
-                class="blur-img mb-4 w-[300px] h-[300px] sm:w-40 sm:h-40 md:w-40 md:h-40 lg:w-60 lg:h-60 object-cover">
+                class="blur-img  mb-4 w-[300px] h-[300px] sm:w-40 sm:h-40 md:w-40 md:h-40 lg:w-60 lg:h-60 object-cover">
             <!-- Chữ "Đang tải..." với 3 dấu chấm -->
-            <div class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold">
-                Đang tải<span class="dot-anim">...</span>
+            <div class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-red-500">
+                Đang tải <span class="dot-anim">...</span>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@ export default {
         },
         image: {
             type: String,
-            default: require('@/assets/logoV1/meme.gif')
+            default: require('@/assets/logoV1/2red.svg')
         }
     }
 }
@@ -32,8 +32,6 @@ export default {
 .blur-img {
     position: relative;
     z-index: 1;
-
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     /* Bóng đổ mờ */
 }
 
