@@ -197,7 +197,8 @@
                     </svg>
 
                     <span
-                        class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">Profile</span>
+                        class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-500">
+                        <router-link to="/about">Profile</router-link></span>
                 </button>
             </div>
         </div>
