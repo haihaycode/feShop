@@ -1,3 +1,4 @@
+
 <template>
   <div class="text-center">
 
@@ -45,3 +46,4 @@ export default {
   },
 }
 </script>
+

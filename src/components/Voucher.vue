@@ -1,3 +1,4 @@
+
 <template>
     <div class="flex items-center justify-center space-x-1">
         <!-- <div class="voucher">
@@ -18,3 +19,4 @@ export default {
 </script>
 
 <style></style>
+

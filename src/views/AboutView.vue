@@ -1,14 +1,19 @@
+
 <template>
   <div>
     <LoadingComponent :loading="loading"></LoadingComponent>
     <div>
       <settingNavigationBottom></settingNavigationBottom>
       <settingHiddenNav></settingHiddenNav>
+      
+      
+      <Address></Address>
     </div>
   </div>
 </template>
 
 <script>
+import Address from "@/components/AdderessComponent.vue"
 import LoadingComponent from '@/components/LoadingComponent.vue';
 import settingNavigationBottom from '@/components/settingNavigationBottom.vue';
 import settingHiddenNav from '@/components/settingHiddenNav.vue';
@@ -19,6 +24,7 @@ export default {
     LoadingComponent,
     settingNavigationBottom,
     settingHiddenNav,
+    Address
   },
   data() {
     return {
@@ -34,4 +40,4 @@ export default {
 };
 </script>
 
-<style></style>
+

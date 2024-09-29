@@ -1,3 +1,4 @@
+
 <template>
 
     <div class="sm:block" :class="mdHidden ? 'md:hidden' : ''">
@@ -224,4 +225,5 @@ export default {
     },
 
 }
+
 </script>
