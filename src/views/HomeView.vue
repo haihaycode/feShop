@@ -1,10 +1,13 @@
+
 <template>
   <div class="text-center">
+
     <NewsComponent></NewsComponent>
     <BannerSale></BannerSale>
     <BannerBrands></BannerBrands>
-    <BannerCategories></BannerCategories>
     <FlashSalse></FlashSalse>
+    <BannerCategories></BannerCategories>
+
 
     <!-- <CategoryNavigation></CategoryNavigation> -->
     <!-- <settingNavigationBottom></settingNavigationBottom>
@@ -20,9 +23,9 @@
 import NewsComponent from '@/components/NewsComponent.vue';
 import BannerBrands from '@/components/BannerBrands.vue';
 import BannerSale from '@/components/BannerSale.vue';
-
+// tien
 import BannerCategories from '@/components/BannerCategories.vue';
-
+// tien 
 import FlashSalse from '@/components/FlashSalse.vue';
 
 export default {
@@ -33,7 +36,6 @@ export default {
     // CategoryNavigation,
     BannerBrands,
     BannerSale,
-
     NewsComponent,
     BannerCategories,
 
@@ -44,3 +46,4 @@ export default {
   },
 }
 </script>
+

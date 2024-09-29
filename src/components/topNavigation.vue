@@ -1,3 +1,4 @@
+
 <template>
     <div>
         <!-- nav top  -->
@@ -12,7 +13,9 @@
             <h1 class="hidden md:block text-2xl text-white font-bold">Gizmo Shop</h1>
 
             <div class="block md:hidden relative w-14 h-14 flex justify-center items-center">
-                <h1 class="text-center font-extrabold text-gray-100 text-5xl">G</h1>
+                <h1 class="text-center font-extrabold text-gray-100 text-5xl">
+                    <img src="../assets/logoV1/3.svg" alt="">
+                </h1>
             </div>
 
             <div class="flex items-center">
@@ -178,3 +181,4 @@ export default {
 };
 
 </script>
+
