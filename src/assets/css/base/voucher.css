@@ -1,35 +1,30 @@
 .voucher {
-    width: 300px;
-    height: 150px;
-    background-color: #ffeb3b;
-    border-radius: 10px;
-    position: relative;
-    margin: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffcc00;
+  color: #fff;
+  padding: 20px;
+  border: 2px dashed #d0021b;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  position: relative;
 }
 
-.voucher::before, .voucher::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #ffffff;
-    border-radius: 50%;
+.voucher-title {
+  background-color: #d0021b;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: #fff;
 }
 
-.voucher::before {
-    top: 0;
-    left: -10px;
+.discount {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d0021b;
+  margin-bottom: 10px;
 }
 
-.voucher::after {
-    bottom: 0;
-    right: -10px;
-}
-
-.voucher-content {
-    padding: 20px;
-    text-align: center;
-    font-family: 'Arial', sans-serif;
+.expiry-date {
+  font-size: 16px;
+  color: #333;
 }

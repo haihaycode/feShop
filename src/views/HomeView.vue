@@ -1,6 +1,5 @@
 <template>
   <div class="text-center">
-
     <NewsComponent></NewsComponent>
     <BannerSale></BannerSale>
     <BannerBrands></BannerBrands>
